@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# Inspection History (Expo + React Native)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Assignment implementation: Inspection History screen with local mock data, month navigation, and a bottom nav with a floating scan button.
 
 ## Get started
 
@@ -15,6 +15,12 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
    npx expo start
    ```
+
+## Notes
+
+- Mock data lives in [mockData.js](mockData.js)
+- Home tab is the Inspection History screen: [app/(tabs)/index.tsx](app/(tabs)/index.tsx)
+- Month navigation uses local filtering via `getInspectionsByMonth(year, month)` (month is 1-12)
 
 In the output, you'll find options to open the app in a
 
