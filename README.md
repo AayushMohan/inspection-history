@@ -1,56 +1,90 @@
-# Inspection History (Expo + React Native)
+# Inspection History Screen (React Native + Expo)
 
-Assignment implementation: Inspection History screen with local mock data, month navigation, and a bottom nav with a floating scan button.
+This repository contains an **Inspection History screen** implemented as part of a React Native assignment.  
+The focus of the work is **UI accuracy**, **clean local data handling**, and **maintainable code**, while strictly following the provided constraints.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+Core requirements and selected optional enhancements implemented:
 
-2. Start the app
+- Inspection History list grouped by day with **sticky date headers**
+- Local mock data with **month-based filtering** (previous / next month)
+- Status-based UI for **Satisfactory / Pending / Failed**
+- **Today’s inspection** highlighted subtly
+- **Pull-to-refresh** (simulated)
+- Subtle **row entry animations** (fade / slide)
+- Bottom tab bar with a **floating Scan button** (UI-only)
 
-   ```bash
-   npx expo start
-   ```
+---
 
-## Notes
+## Media
 
-- Mock data lives in [mockData.js](mockData.js)
-- Home tab is the Inspection History screen: [app/(tabs)/index.tsx](app/(tabs)/index.tsx)
-- Month navigation uses local filtering via `getInspectionsByMonth(year, month)` (month is 1-12)
+**Quick preview (GIF)**  
+![Inspection History preview](assets/preview.gif)
 
-In the output, you'll find options to open the app in a
+**Static UI screenshot**  
+![Inspection History screenshot](assets/home.png)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+**High-resolution walkthrough (video)**  
+[Watch full demo](assets/Video_Preview.mov)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Tech Stack
 
-When you're ready, run:
+- React Native
+- Expo
+- Expo Router (file-based routing)
+- `expo/vector-icons` (icons only; no UI libraries used)
+- `dayjs` for date formatting and grouping
+
+---
+
+## Project Structure
+
+- Inspection History screen: `app/(tabs)/index.tsx`
+- Bottom tabs & floating Scan button: `app/(tabs)/_layout.tsx`
+- Local mock data & month filter helper: `mockData.js`
+
+---
+
+## Development
+
+Install dependencies:
 
 ```bash
-npm run reset-project
+npm install
+
+
+Run the app:
+
+```bash
+npm run start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Platform shortcuts:
 
-## Learn more
+```bash
+npm run ios
+npm run android
+npm run web
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Lint:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm run lint
+```
 
-## Join the community
+### Notes
 
-Join our community of developers creating universal apps.
+- Month navigation uses `getInspectionsByMonth(year, month)` where `month` is **1–12**.
+- The **Scan button** is implemented as a **visual element only**, as required by the assignment scope.
+- The **Profile tab** is intentionally visible but disabled (UI-only).
+- Header back and notification buttons are currently no-ops, per instructions.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Summary
+
+This project intentionally avoids over-engineering and external UI libraries, focusing instead on correctness, clarity, and adherence to the assignment requirements.
